@@ -1,0 +1,9 @@
+// Mixin
+@mixin button {
+    display: inline-block;
+    color: white;
+    background-color: $primaryColor;
+    border-radius: 2em;
+    padding: .5em 2em;
+    text-decoration: none;
+}

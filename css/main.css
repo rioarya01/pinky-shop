@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+body::before {
+  content: "";
+  background-image: url(../img/bg.png);
+  background-position: right 80px top 80px;
+  background-repeat: no-repeat;
+  background-size: 40vmax;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (max-width: 600px) {
+  body::before {
+    background-position: right 30px top 80px;
+  }
+}
+
+.custom-nav .navbar-brand img {
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+}
+.custom-nav .navbar-brand span {
+  color: #ff6699;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-left: 0.4em;
+}
+.custom-nav #navbarNav .navbar-nav .nav-item .nav-link {
+  color: #ff6699;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 2.2em;
+  margin-bottom: -5px;
+  transition: 0.3s color ease;
+}
+.custom-nav #navbarNav .navbar-nav .nav-item .nav-link:hover {
+  color: #DA1851;
+}
+.custom-nav #navbarNav .navbar-nav .nav-item .sign-up-button {
+  display: inline-block;
+  color: white;
+  background-color: #ff6699;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  text-decoration: none;
+}
+.custom-nav #navbarNav .navbar-nav .nav-item .sign-up-button:hover {
+  background-color: #DA1851;
+  color: white;
+}
+
+.custom-section {
+  margin-top: 9em;
+}
+@media screen and (max-width: 1200px) {
+  .custom-section {
+    margin-top: 6em;
+  }
+}
+.custom-section h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #284DA6;
+  text-transform: uppercase;
+}
+.custom-section h3 {
+  font-weight: 500;
+  font-size: 2rem;
+  color: #ff6699;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}
+.custom-section p {
+  color: #131112;
+  font-size: 1rem;
+  margin-top: 1em;
+}
+@media screen and (min-width: 768px) {
+  .custom-section p {
+    word-wrap: break-word;
+    width: 300px;
+  }
+}
+.custom-section a {
+  margin-top: 1em;
+  display: inline-block;
+  color: white;
+  background-color: #ff6699;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: 0.5s ease;
+}
+.custom-section a:hover {
+  color: #ff6699;
+  border: 1px solid #ff6699;
+  background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  .custom-section {
+    margin-top: 25em;
+    text-align: center;
+  }
+  .custom-section h2,
+  .custom-section h3,
+  .custom-section p {
+    text-shadow: 1px 1px 1px rgba(19, 17, 18, 0.4);
+  }
+}/*# sourceMappingURL=main.css.map */

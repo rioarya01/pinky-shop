@@ -1,0 +1,127 @@
+@import 'fonts', 'variables', 'mixins';
+
+// Styles
+body {
+    font-family: 'Montserrat', sans-serif;
+    &::before {
+        content: '';
+        background-image: url(../img/bg.png);
+        background-position: right 80px top 80px;
+        background-repeat: no-repeat;
+        background-size: 40vmax;
+        opacity: .8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    @media screen and (max-width: 600px) {
+        &::before {
+            background-position: right 30px top 80px;
+        }
+    }
+}
+
+// navigation / navbar
+.custom-nav {
+    .navbar-brand {
+        img {
+            width: 30px;
+            height: 30px;
+            margin-top: -10px;
+        }
+        span {
+            color: $primaryColor;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-left: .4em;
+        }
+    }
+
+    #navbarNav {
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: $primaryColor;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin-left: 2.2em;
+                    margin-bottom: -5px;
+                    transition: .3s color ease;
+
+                    &:hover {
+                        color: $secondaryColor;
+                    }
+                }
+                .sign-up-button {
+                    @include button;
+
+                    &:hover {
+                        background-color: $secondaryColor;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// custom section
+.custom-section {
+    margin-top: 9em;
+    @media screen and (max-width: 1200px) {
+        margin-top: 6em;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: $tertiaryColor;
+        text-transform: uppercase;
+        // line-height: 1;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 2rem;
+        color: $primaryColor;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin-top: .5rem;
+    }
+
+    p {
+        color: $textColor;
+        font-size: 1rem;
+        margin-top: 1em;
+
+        @media screen and (min-width: 768px) {
+            word-wrap: break-word;
+            width: 300px;
+        }
+    }
+
+    a {
+        margin-top: 1em;
+        @include button;
+        border: 1px solid transparent;
+        transition: .5s ease;
+
+        &:hover {
+            color: $primaryColor;
+            border: 1px solid $primaryColor;
+            background-color: transparent;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 25em;
+        text-align: center;
+        h2,
+        h3,
+        p {
+            text-shadow: 1px 1px 1px rgba($textColor, .4);
+        }
+    }
+}
