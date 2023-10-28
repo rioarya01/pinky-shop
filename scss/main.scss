@@ -1,127 +1,588 @@
 @import 'fonts', 'variables', 'mixins';
 
 // Styles
-body {
-    font-family: 'Montserrat', sans-serif;
-    &::before {
-        content: '';
-        background-image: url(../img/bg.png);
-        background-position: right 80px top 80px;
-        background-repeat: no-repeat;
-        background-size: 40vmax;
-        opacity: .8;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+article, aside {
+    padding-top: 6rem;
+}
+
+// Header
+.custom-navbar {
+    padding: 0 40px;
+    @media screen and (min-width: 992px) {
+        padding: 0 50px;
     }
-    @media screen and (max-width: 600px) {
-        &::before {
-            background-position: right 30px top 80px;
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .img-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 20px 0;
+        @media screen and (min-width: 768px) {
+            gap: 15px;
+            margin: 15px 0;
+        }
+        img {
+            width: 40px;
+            @media screen and (min-width: 768px) {
+                width: 50px;
+            }
+        }
+        span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $primaryColor;
+            line-height: 0;
+            @media screen and (min-width: 768px) {
+                font-size: 2rem;
+                font-weight: 800;
+            }
+        }
+    }
+
+    .custom-navbar-nav {
+        display: flex;
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        height: 80px;
+        margin: 0;
+        padding: 20px 0;
+        list-style: none;
+        transition-duration: .25s;
+        box-shadow: 0 -4px 4px rgba(255, 102, 153);
+        border-radius: 15px 15px 0 0;
+        @media screen and (min-width: 992px) {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            height: auto;
+            padding: 0;
+            box-shadow: none;
+            border-radius: 0;
+            margin-top: -25px;
+        }
+
+        .custom-nav-item{
+            display: block;
+            transition-duration: .25s;
+            list-style: none;
+            margin: 0 auto;
+            position: relative;
+            justify-content: baseline;
+            text-align: center;
+            @media screen and (min-width: 992px) {
+                display: flex;
+                margin: 0 20px;
+                svg {
+                    display: none;
+                }
+            }
+            span {
+                color: $primaryColor;
+                font-size: 12px;
+                font-weight: bolder;
+                @media screen and (min-width: 768px) {
+                    font-size: 1.2rem;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    #nav-toggle {
+        opacity: 0;
+        &:checked + .nav-btn > span {
+            transform: rotate(45deg);
+        }
+        &:checked + .nav-btn > span::before {
+            top: 0;
+            transform: rotate(0deg);
+            background-color: #DA1851;
+        }
+        &:checked + .nav-btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+            background-color: #DA1851;
+        } 
+        &:checked ~ .custom-navbar-nav {
+            bottom: 0 !important;
+        }
+    }
+    .nav-btn {
+        position: fixed;
+        top: 38px;
+        right: 22px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+    .nav-btn > span,
+    .nav-btn > span::before,
+    .nav-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #ff6699;
+        transition-duration: .25s;
+    }
+    .nav-btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    .nav-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+}
+
+// Home
+.home {
+    .home-bg {
+        margin: 0 auto;
+        img {
+            padding: 50px;
+            width: 100%;
+            @media screen and (min-width: 768px) {
+                width: 600px;
+            }
+            @media screen and (min-width: 992px) {
+                padding: 40px;
+            }
+        }
+    }
+    .home-description {
+        padding: 20px;
+        text-align: center;
+        @media screen and (min-width: 992px) {
+            padding: 40px;
+            text-align: justify;
+        }
+        .home-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            justify-content: center;
+            @media screen and (min-width: 992px) {
+                gap: 20px;
+                justify-content: normal;
+            }
+            img {
+                width: 40px;
+                @media screen and (min-width: 992px) {
+                    width: 80px;
+                }
+            }
+            h1 {
+                font-size: 1.5rem;
+                color: $primaryColor;
+                font-weight: bold;
+                @media screen and (min-width: 768px) {
+                    font-size: 3rem;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 4rem;
+                }
+            }
+        }
+        p {
+            font-weight: bolder;
+            font-size: 14px;
+            @media screen and (min-width: 992px) {
+                font-size: 18px;
+            }
+        }
+        a {
+            @include button-default;
         }
     }
 }
 
-// navigation / navbar
-.custom-nav {
-    .navbar-brand {
-        img {
-            width: 30px;
-            height: 30px;
-            margin-top: -10px;
+// About
+.about {
+    margin-top: -5px;
+    background-color: #ff6699;
+    margin-bottom: -5px;
+    .about-description {
+        padding: 20px;
+        @media screen and (min-width: 992px) {
+            padding: 40px;
         }
-        span {
-            color: $primaryColor;
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-left: .4em;
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            @media screen and (min-width: 768px) {
+                font-size: 3rem;
+            }
+            @media screen and (min-width: 992px) {
+                font-size: 4rem;
+            }
+        }
+        p {
+            font-size: 14px;
+            @media screen and (min-width: 992px) {
+                font-size: 18px;
+            }
         }
     }
+}
 
-    #navbarNav {
-        .navbar-nav {
-            .nav-item {
-                .nav-link {
-                    color: $primaryColor;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    margin-left: 2.2em;
-                    margin-bottom: -5px;
-                    transition: .3s color ease;
+// Gallery
+.gallery {
+    .gallery-description {
+        h1 {
+            color: $primaryColor;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            @media screen and (min-width: 768px) {
+                font-size: 3rem;
+            }
+            @media screen and (min-width: 992px) {
+                font-size: 4rem;
+            }
+        }
+        p {
+            font-size: 18px;
+            @media screen and (min-width: 992px) {
+                font-size: 22px;
+            }
+        }
+    }
+    .gallery-body {
+        width: 80%;
+        margin: 20px auto;
+        .card-body {
+            @include card-body;
+        }
+    }
+    .custom-modal {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
 
-                    &:hover {
-                        color: $secondaryColor;
-                    }
+// Faq
+.faq {
+    margin-top: -5px;
+    background-color: $primaryColor;
+    height: 150vh;
+    margin-bottom: -5px;
+    @media screen and (min-width: 768px) {
+        height: 120vh;
+    }
+    .faq-description {
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 100px;
+            margin: auto;
+            @media screen and (min-width: 768px) {
+                font-size: 3rem;
+            }
+            @media screen and (min-width: 992px) {
+                font-size: 4rem;
+            }
+        }
+        p {
+            font-size: 16px;
+            margin: auto 20px;
+            @media screen and (min-width: 768px) {
+                font-size: 22px;
+            }
+        }
+    }
+    .faq-body {
+        text-align: justify;
+        width: 90%;
+        margin: 0;
+        @media screen and (min-width: 768px) {
+            width: 75%;
+            margin: 20px auto;
+        }
+        @media screen and (min-width: 992px) {
+            width: 80%;
+        }
+        li {
+            list-style: none;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            color: $primaryColor;
+            box-shadow: 6px 6px 10px -1px rgba(0,0,0, .15),
+                        -6px -6px 10px -1px rgba(255,255,255, .7);
+            @media screen and (min-width: 768px) {
+                padding: 20px;
+            }
+            label {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                font-weight: bolder;
+                cursor: pointer;
+                font-size: 14px;
+                @media screen and (min-width: 768px) {
+                    font-size: 18px;
                 }
-                .sign-up-button {
-                    @include button;
+                &::before{
+                    content: '+';
+                    margin-right: 10px;
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                    color: $primaryColor;   
+                }
+            }
+            input[type="radio"] {
+                display: none;
+                &:checked + label + .faq-content {
+                    max-height: 400px;
+                    padding: 10px 10px 20px;
+                }
+                &:checked + label::before {
+                    content: '-';
+                    font-size: 2rem;
+                }
+            }
+        }
+        .faq-content {
+            color: #555;
+            padding: 0 10px;
+            line-height: 26px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s, padding .5s;
+            font-size: 12px;
+            @media screen and (min-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
 
-                    &:hover {
-                        background-color: $secondaryColor;
-                        color: white;
-                    }
+// Contact
+.contact {
+    .contact-description {
+        h1 {
+            color: #ff6699;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            @media screen and (min-width: 768px) {
+                font-size: 3rem;
+            }
+            @media screen and (min-width: 992px) {
+                font-size: 4rem;
+            }
+        }
+        p {
+            font-size: 16px;
+            margin: auto 20px;
+            @media screen and (min-width: 768px) {
+                font-size: 22px;
+            }
+        }
+    }
+    .contact-body {
+        border-radius: 1rem;
+        margin: 10px auto;
+        .map {
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            border-radius: 1rem;
+            @media screen and (min-width: 768px) {
+                height: 400px;
+            }
+            @media screen and (min-width: 992px) {
+                height: 500px;
+            }
+        }
+        .form-contact-us {
+            .custom-form-control label {
+                font-size: 16px;
+                font-weight: bolder;
+                color: $primaryColor;
+            }
+            .custom-form-control input, textarea {
+                // background-color: #f0f0f0;
+                border: solid 2px $primaryColor;
+                outline: none;
+                border-radius: 10px;
+                resize: none;
+                color: $primaryColor;
+            }
+            .custom-form-control input::placeholder, textarea::placeholder {
+                color: #555;
+            }
+            .custom-form-control input:focus, textarea:focus {
+                box-shadow: 2px 2px 6px $primaryColor;
+                border: solid 2px $primaryColor;
+            }
+            .custom-btn-form-control {
+                .btn-custom-submit {
+                    @include button-submit;
+                }
+                .btn-custom-reset {
+                    @include button-reset;
                 }
             }
         }
     }
 }
 
-// custom section
-.custom-section {
-    margin-top: 9em;
-    @media screen and (max-width: 1200px) {
-        margin-top: 6em;
-    }
-
-    h2 {
-        font-weight: 700;
-        font-size: 2.5rem;
-        color: $tertiaryColor;
-        text-transform: uppercase;
-        // line-height: 1;
-    }
-
-    h3 {
-        font-weight: 500;
-        font-size: 2rem;
-        color: $primaryColor;
-        text-transform: uppercase;
-        white-space: nowrap;
-        margin-top: .5rem;
-    }
-
-    p {
-        color: $textColor;
-        font-size: 1rem;
-        margin-top: 1em;
-
-        @media screen and (min-width: 768px) {
-            word-wrap: break-word;
-            width: 300px;
+// Footer
+.footer {
+    margin-top: 10rem;
+    .footer-description {
+        padding: 30px;
+        @media screen and (min-width: 992px) {
+            padding: 50px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .footer-logo {
+            margin: 20px 0;
+            @media screen and (min-width: 992px) {
+                margin: 0;
+            }
+            a {
+                gap: 10px;
+                margin: 8px 0;
+            }
+            img {
+                width: 40px;
+                @media screen and (min-width: 768px) {
+                    width: 50px;
+                }
+            }
+            span {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $primaryColor;
+                @media screen and (min-width: 768px) {
+                    font-size: 2rem;
+                    font-weight: 800;
+                }
+            }
+            p {
+                font-size: 14px;
+                color: #000;
+                @media screen and (min-width: 768px) {
+                    font-size: 16px;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 18px;
+                }
+            }
+        }
+        .footer-menu {
+            margin: 20px 0;
+            @media screen and (min-width: 992px) {
+                margin: 0;
+            }
+            h2 {
+                font-weight: bolder;
+                font-size: 18px;
+                color: #ff6699;
+                @media screen and (min-width: 768px) {
+                    font-size: 24px;
+                }
+            }
+            ul li {
+                list-style: none;
+                margin: 6px 0;
+                font-size: 12px;
+                @media screen and (min-width: 768px) {
+                    margin: 8px 0;
+                    font-size: 16px;
+                }
+                @media screen and (min-width: 992px) {
+                    margin: 10px 0;
+                    font-size: 18px;
+                }
+                a span {
+                    color: #000;
+                    font-size: 14px;
+                    @media screen and (min-width: 768px) {
+                        font-size: 16px;
+                    }
+                    @media screen and (min-width: 992px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .footer-sosmed {
+            margin: 20px 0;
+            @media screen and (min-width: 992px) {
+                margin: 0;
+            }
+            h2 {
+                font-weight: bolder;
+                font-size: 18px;
+                color: $primaryColor;
+                @media screen and (min-width: 768px) {
+                    font-size: 24px;
+                }
+            }
+            ul li {
+                list-style: none;
+                margin: 4px 0;
+                font-size: 12px;
+                @media screen and (min-width: 768px) {
+                    font-size: 16px;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 18px;
+                }
+            }
+            a {
+                color: #000;
+                display: flex;
+                margin: 10px 0;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+                @media screen and (min-width: 768px) {
+                    font-size: 16px;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 18px;
+                }
+                img {
+                    width: 28px;
+                }
+            }
         }
     }
-
-    a {
-        margin-top: 1em;
-        @include button;
-        border: 1px solid transparent;
-        transition: .5s ease;
-
-        &:hover {
-            color: $primaryColor;
-            border: 1px solid $primaryColor;
-            background-color: transparent;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 25em;
-        text-align: center;
-        h2,
-        h3,
-        p {
-            text-shadow: 1px 1px 1px rgba($textColor, .4);
-        }
+    .footer-copyright{
+        font-size:smaller;
+        padding: 8px 0px;
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        background-color: $primaryColor;
     }
 }

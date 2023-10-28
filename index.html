@@ -4,63 +4,493 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pinky Shop</title>
 
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="css/main.css">
 
-        <title>Pinky Shop</title>
     </head>
     <body>
-        <div class="container my-2">
-            <nav class="navbar navbar-expand-lg custom-nav bg-transparent">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="img/logo.png" alt="Pinky Shop Logo">
-                        <span>Pinky Shop</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+        <!-- Header -->
+        <header>
+            <nav class="navbar custom-navbar fixed-top navbar-expand-lg shadow-sm justify-content-between bg-white">
+                <!-- Logo -->
+                <a href="#" class="img-logo">
+                    <img src="./img/logo.png" alt="Pinky Shop Logo">
+                    <span>Pinky Shop</span>
+                </a>
+                <!-- Hamburger Menu -->
+                <input id="nav-toggle" type="checkbox" />   
+                <label class="nav-btn" for="nav-toggle">
+                    <span></span>
+                </label>
+                <!-- Menu List -->
+                <ul class="custom-navbar-nav bg-white">
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#ff6699"><path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z"/></svg>
+                            <br>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link" aria-current="page" href="#about">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#ff6699"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                            <br>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link" aria-current="page" href="#gallery">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#ff6699"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm600-320q-17 0-28.5-11.5T680-560v-160q0-17 11.5-28.5T720-760h160q17 0 28.5 11.5T920-720v160q0 17-11.5 28.5T880-520H720ZM160-360h320L375-500l-75 100-55-73-85 113Zm560 160q-17 0-28.5-11.5T680-240v-160q0-17 11.5-28.5T720-440h160q17 0 28.5 11.5T920-400v160q0 17-11.5 28.5T880-200H720Z"/></svg>
+                            <br>
+                            <span>Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link" aria-current="page" href="#faq">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#ff6699"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                            <br>
+                            <span>FAQ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item custom-nav-item">
+                        <a class="nav-link" aria-current="page" href="#contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#ff6699"><path d="M160-40v-80h640v80H160Zm0-800v-80h640v80H160Zm320 400q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm70-80h500q-45-56-109-88t-141-32q-77 0-141 32t-109 88Z"/></svg>
+                            <br>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <!-- Content -->
+            <div id="content">
+                <!-- Home -->
+                <article id="home" class="home d-flex flex-column flex-lg-row align-items-baseline align-items-lg-center justify-content-center h-100">
+                    <div class="home-bg">
+                        <img src="./img/bg.png" alt="">
+                    </div>
+                    <div class="home-description">
+                        <div class="home-title">
+                            <img src="./img/logo.png" alt="home-logo">
+                            <h1>PINKY SHOP</h1>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam labore itaque repudiandae nulla, mollitia, assumenda aliquam distinctio ea a dolor voluptates eaque exercitationem.
+                        </p>
+                        <a class="btn" href="#" role="button">Read More</a>
+                    </div>
+                </article>
+
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+                    .path-0{
+                    animation:pathAnim-0 4s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    }
+                    @keyframes pathAnim-0{
+                    0%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    25%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 82.71538461538461,202.33589743589744 165.43076923076922,204.67179487179487 236,187 C 306.5692307692308,169.32820512820513 364.9923076923077,131.64871794871794 441,145 C 517.0076923076923,158.35128205128206 610.5999999999999,222.73333333333332 694,235 C 777.4000000000001,247.26666666666668 850.6076923076923,207.41794871794872 928,176 C 1005.3923076923077,144.58205128205128 1086.9692307692308,121.5948717948718 1173,127 C 1259.0307692307692,132.4051282051282 1349.5153846153846,166.2025641025641 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    50%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 81.96153846153848,199.66410256410256 163.92307692307696,199.32820512820513 244,192 C 324.07692307692304,184.67179487179487 402.2692307692307,170.35128205128203 486,178 C 569.7307692307693,185.64871794871797 658.9999999999999,215.2666666666667 746,211 C 833.0000000000001,206.7333333333333 917.7307692307693,168.58205128205128 989,149 C 1060.2692307692307,129.41794871794872 1118.076923076923,128.4051282051282 1191,140 C 1263.923076923077,151.5948717948718 1351.9615384615386,175.7974358974359 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    75%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 53.351282051282055,233.4820512820513 106.70256410256411,266.9641025641026 196,244 C 285.2974358974359,221.03589743589743 410.5410256410256,141.62564102564102 498,128 C 585.4589743589744,114.37435897435897 635.1333333333334,166.5333333333333 702,210 C 768.8666666666666,253.4666666666667 852.925641025641,288.24102564102566 934,264 C 1015.074358974359,239.75897435897434 1093.1641025641027,156.5025641025641 1177,136 C 1260.8358974358973,115.4974358974359 1350.4179487179485,157.74871794871797 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    100%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    }</style><path d="M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#ff6699" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+
+                <!-- About -->
+                <article id="about" class="about">
+                    <div class="about-description text-white text-center">
+                        <h1>About Us</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe excepturi eius eos autem nostrum distinctio quam voluptate commodi maiores odit. Adipisci fugit libero officiis atque, quis nam veritatis est recusandae, non minus ullam hic eveniet corporis molestias rerum neque, consequatur voluptate iure sint eaque! Mollitia, earum! Similique reiciendis maxime quos possimus id!</p>
+                    </div>
+                </article>
+
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+                    .path-0{
+                    animation:pathAnim-0 4s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    }
+                    @keyframes pathAnim-0{
+                    0%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    25%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 55.648717948717916,159.25384615384615 111.29743589743583,118.50769230769231 197,127 C 282.70256410256417,135.4923076923077 398.4589743589745,193.22307692307692 481,191 C 563.5410256410255,188.77692307692308 612.8666666666666,126.60000000000002 692,129 C 771.1333333333334,131.39999999999998 880.074358974359,198.37692307692308 962,206 C 1043.925641025641,213.62307692307692 1098.8358974358973,161.8923076923077 1174,151 C 1249.1641025641027,140.1076923076923 1344.5820512820515,170.05384615384617 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    50%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 87.7948717948718,244.86410256410255 175.5897435897436,289.7282051282051 252,268 C 328.4102564102564,246.27179487179487 393.43589743589746,157.95128205128205 472,138 C 550.5641025641025,118.04871794871795 642.6666666666666,166.46666666666667 729,184 C 815.3333333333334,201.53333333333333 895.897435897436,188.18205128205122 982,205 C 1068.102564102564,221.81794871794878 1159.7435897435896,268.80512820512826 1237,273 C 1314.2564102564104,277.19487179487174 1377.128205128205,238.59743589743587 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    75%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 62.55641025641029,232.68205128205128 125.11282051282058,265.36410256410255 217,251 C 308.8871794871794,236.63589743589745 430.10512820512815,175.22564102564104 515,167 C 599.8948717948718,158.77435897435896 648.4666666666668,203.73333333333332 720,200 C 791.5333333333332,196.26666666666668 886.028205128205,143.84102564102562 976,129 C 1065.971794871795,114.15897435897436 1151.4205128205128,136.9025641025641 1228,155 C 1304.5794871794872,173.0974358974359 1372.2897435897435,186.54871794871795 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    100%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    }</style><path d="M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#ff6699" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+
+                <!-- Gallery -->
+                <article id="gallery" class="gallery">
+                    <div class="gallery-description text-center">
+                        <h1>Gallery</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et labore consectetur corporis.</p>
+                    </div>
+                    <!-- Gallery Body -->
+                    <div class="gallery-body d-flex align-items-center justify-content-around flex-wrap">
+                        <!-- TShirt -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-tshirt">
+                            <img src="./img/tshirt.jpg" alt="TShirt">
+                            <div class="gallery-col-description">
+                                <h2>TShirt</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Bag -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-bag">
+                            <img src="./img/bag.jpg" alt="Bag">
+                            <div class="gallery-col-description">
+                                <h2>Bag</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Shoes -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-shoes">
+                            <img src="./img/shoes.jpg" alt="Shoes">
+                            <div class="gallery-col-description">
+                                <h2>Shoes</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Glasses -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-glasses">
+                            <img src="./img/glasses.jpg" alt="Glasses">
+                            <div class="gallery-col-description">
+                                <h2>Glasses</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                        <!-- High Heels -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-highheels">
+                            <img src="./img/highheels.jpg" alt="High Heels">
+                            <div class="gallery-col-description">
+                                <h2>High Heels</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Beauty Products -->
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#popup-beautyproducts">
+                            <img src="./img/beautyproducts.jpg" alt="Beauty Product">
+                            <div class="gallery-col-description">
+                                <h2>Beauty Product</h2>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, necessitatibus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Popup -->
+                    <!-- TShirt -->
+                    <div class="modal fade custom-modal" id="popup-tshirt">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/tshirt.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bag -->
+                    <div class="modal fade custom-modal" id="popup-bag">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/bag.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Shoes -->
+                    <div class="modal fade custom-modal" id="popup-shoes">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/shoes.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Glasses -->
+                    <div class="modal fade custom-modal" id="popup-glasses">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/glasses.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- High Heels -->
+                    <div class="modal fade custom-modal" id="popup-highheels">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/highheels.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Beauty Products -->
+                    <div class="modal fade custom-modal" id="popup-beautyproducts">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <img src="./img/beautyproducts.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+                    .path-0{
+                    animation:pathAnim-0 4s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    }
+                    @keyframes pathAnim-0{
+                    0%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    25%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 82.71538461538461,202.33589743589744 165.43076923076922,204.67179487179487 236,187 C 306.5692307692308,169.32820512820513 364.9923076923077,131.64871794871794 441,145 C 517.0076923076923,158.35128205128206 610.5999999999999,222.73333333333332 694,235 C 777.4000000000001,247.26666666666668 850.6076923076923,207.41794871794872 928,176 C 1005.3923076923077,144.58205128205128 1086.9692307692308,121.5948717948718 1173,127 C 1259.0307692307692,132.4051282051282 1349.5153846153846,166.2025641025641 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    50%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 81.96153846153848,199.66410256410256 163.92307692307696,199.32820512820513 244,192 C 324.07692307692304,184.67179487179487 402.2692307692307,170.35128205128203 486,178 C 569.7307692307693,185.64871794871797 658.9999999999999,215.2666666666667 746,211 C 833.0000000000001,206.7333333333333 917.7307692307693,168.58205128205128 989,149 C 1060.2692307692307,129.41794871794872 1118.076923076923,128.4051282051282 1191,140 C 1263.923076923077,151.5948717948718 1351.9615384615386,175.7974358974359 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    75%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 53.351282051282055,233.4820512820513 106.70256410256411,266.9641025641026 196,244 C 285.2974358974359,221.03589743589743 410.5410256410256,141.62564102564102 498,128 C 585.4589743589744,114.37435897435897 635.1333333333334,166.5333333333333 702,210 C 768.8666666666666,253.4666666666667 852.925641025641,288.24102564102566 934,264 C 1015.074358974359,239.75897435897434 1093.1641025641027,156.5025641025641 1177,136 C 1260.8358974358973,115.4974358974359 1350.4179487179485,157.74871794871797 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    100%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    }</style><path d="M 0,400 C 0,400 0,200 0,200 C 104.43846153846152,167.6153846153846 208.87692307692305,135.23076923076923 278,135 C 347.12307692307695,134.76923076923077 380.9307692307692,166.69230769230768 447,189 C 513.0692307692308,211.30769230769232 611.4000000000001,224 702,243 C 792.5999999999999,262 875.4692307692308,287.3076923076924 948,261 C 1020.5307692307692,234.69230769230765 1082.7230769230769,156.76923076923077 1163,138 C 1243.2769230769231,119.23076923076924 1341.6384615384616,159.6153846153846 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#ff6699" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+
+                <!-- FAQ -->
+                <article id="faq" class="faq text-white">
+                    <div class="faq-description text-center mb-3 mb-lg-5">
+                        <h1>FAQ</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et labore consectetur corporis.</p>
+                    </div>
+                    <ul class="faq-body">
+                        <!-- First -->
+                        <li>
+                            <input type="radio" name="faq-body" id="first" checked>
+                            <label for="first">Lorem ipsum dolor sit amet?</label>
+                            <div class="faq-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A expedita deserunt explicabo nemo debitis veniam reiciendis excepturi hic, quo quos, fugiat, commodi aliquid. Vel expedita aut tempore corporis! Fugit suscipit beatae laudantium sint sunt porro illo ex? Vero, in reiciendis?
+                                </p>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resources</a>
+                        <!-- Second -->
+                        <li>
+                            <input type="radio" name="faq-body" id="second">
+                            <label for="second">Lorem ipsum dolor sit amet?</label>
+                            <div class="faq-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A expedita deserunt explicabo nemo debitis veniam reiciendis excepturi hic, quo quos, fugiat, commodi aliquid. Vel expedita aut tempore corporis! Fugit suscipit beatae laudantium sint sunt porro illo ex? Vero, in reiciendis?
+                                </p>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Faq</a>
+                        <!-- Third -->
+                        <li>
+                            <input type="radio" name="faq-body" id="third">
+                            <label for="third">Lorem ipsum dolor sit amet?</label>
+                            <div class="faq-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A expedita deserunt explicabo nemo debitis veniam reiciendis excepturi hic, quo quos, fugiat, commodi aliquid. Vel expedita aut tempore corporis! Fugit suscipit beatae laudantium sint sunt porro illo ex? Vero, in reiciendis?
+                                </p>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                        <!-- Fourth -->
+                        <li>
+                            <input type="radio" name="faq-body" id="fourth">
+                            <label for="fourth">Lorem ipsum dolor sit amet?</label>
+                            <div class="faq-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A expedita deserunt explicabo nemo debitis veniam reiciendis excepturi hic, quo quos, fugiat, commodi aliquid. Vel expedita aut tempore corporis! Fugit suscipit beatae laudantium sint sunt porro illo ex? Vero, in reiciendis?
+                                </p>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link sign-up-button" href="#">Sign Up</a>
+                        <!-- Fifth -->
+                        <li>
+                            <input type="radio" name="faq-body" id="fifth">
+                            <label for="fifth">Lorem ipsum dolor sit amet?</label>
+                            <div class="faq-content">
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A expedita deserunt explicabo nemo debitis veniam reiciendis excepturi hic, quo quos, fugiat, commodi aliquid. Vel expedita aut tempore corporis! Fugit suscipit beatae laudantium sint sunt porro illo ex? Vero, in reiciendis?
+                                </p>
+                            </div>
                         </li>
-                        </ul>
+                    </ul>
+                </article>
+
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+                    .path-0{
+                    animation:pathAnim-0 4s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    }
+                    @keyframes pathAnim-0{
+                    0%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    25%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 55.648717948717916,159.25384615384615 111.29743589743583,118.50769230769231 197,127 C 282.70256410256417,135.4923076923077 398.4589743589745,193.22307692307692 481,191 C 563.5410256410255,188.77692307692308 612.8666666666666,126.60000000000002 692,129 C 771.1333333333334,131.39999999999998 880.074358974359,198.37692307692308 962,206 C 1043.925641025641,213.62307692307692 1098.8358974358973,161.8923076923077 1174,151 C 1249.1641025641027,140.1076923076923 1344.5820512820515,170.05384615384617 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    50%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 87.7948717948718,244.86410256410255 175.5897435897436,289.7282051282051 252,268 C 328.4102564102564,246.27179487179487 393.43589743589746,157.95128205128205 472,138 C 550.5641025641025,118.04871794871795 642.6666666666666,166.46666666666667 729,184 C 815.3333333333334,201.53333333333333 895.897435897436,188.18205128205122 982,205 C 1068.102564102564,221.81794871794878 1159.7435897435896,268.80512820512826 1237,273 C 1314.2564102564104,277.19487179487174 1377.128205128205,238.59743589743587 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    75%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 62.55641025641029,232.68205128205128 125.11282051282058,265.36410256410255 217,251 C 308.8871794871794,236.63589743589745 430.10512820512815,175.22564102564104 515,167 C 599.8948717948718,158.77435897435896 648.4666666666668,203.73333333333332 720,200 C 791.5333333333332,196.26666666666668 886.028205128205,143.84102564102562 976,129 C 1065.971794871795,114.15897435897436 1151.4205128205128,136.9025641025641 1228,155 C 1304.5794871794872,173.0974358974359 1372.2897435897435,186.54871794871795 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    100%{
+                    d: path("M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z");
+                    }
+                    }</style><path d="M 0,400 C 0,400 0,200 0,200 C 103.5025641025641,209.6076923076923 207.0051282051282,219.2153846153846 280,231 C 352.9948717948718,242.7846153846154 395.4820512820513,256.74615384615385 474,245 C 552.5179487179487,233.25384615384615 667.0666666666666,195.8 760,193 C 852.9333333333334,190.2 924.2512820512823,222.0538461538462 1001,233 C 1077.7487179487177,243.9461538461538 1159.9282051282053,233.98461538461538 1234,225 C 1308.0717948717947,216.01538461538462 1374.0358974358974,208.0076923076923 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#ff6699" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+            </div>
+            <!-- Map & Contact -->
+            <aside id="contact" class="contact">
+                <div class="contact-description text-center mb-3 mb-lg-5">
+                    <h1>Hubungi Kami</h1>
+                    <p>Silahkan isi nama, email, dan pesan yang ingin anda sampaikan untuk info lebih lanjut</p>
+                </div>
+                <div class="contact-body container">
+                    <div class="row">
+                        <!-- Maps -->
+                        <div class="col-lg-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.2032475858528!2d115.23012737583522!3d-8.672212188280989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240f44fe23ac1%3A0x42e00aff575fe573!2sLapangan%20Niti%20Mandala%20Renon%20-%20Monumen%20Perjuangan%20Rakyat%20Bali!5e0!3m2!1sid!2sid!4v1698412186434!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map shadow"></iframe>
+                        </div>
+                        <!-- Forms -->
+                        <div class="col-lg-6 my-lg-auto">
+                            <form action="#" class="form-contact-us mt-4 mt-lg-0">
+                                <!-- Input Nama -->
+                                <div class="mb-3 custom-form-control">
+                                    <label for="exampleInputName" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" placeholder="Masukkan nama anda..." required id="exampleInputName">
+                                </div>
+                                <!-- Input Email -->
+                                <div class="mb-3 custom-form-control">
+                                    <label for="exampleInputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="Masukkan email anda..." required id="exampleInputEmail">
+                                </div>
+                                <!-- Input Pesan -->
+                                <div class="mb-3 custom-form-control">
+                                    <label for="exampleFormControlTextarea" class="form-label">Pesan</label>
+                                    <textarea class="form-control" name="pesan" id="pesan" placeholder="Tuliskan pesan anda..." required rows="5" id="exampleFormControlTextarea"></textarea>
+                                </div>
+                                <!-- Button Kirim & Reset -->
+                                <div class="custom-btn-form-control mt-3 text-center">
+                                    <button type="submit" class="btn btn-custom-submit my-1 my-sm-0 mx-2">Kirim</button>
+                                    <button type="reset" class="btn btn-custom-reset my-1 my-sm-0 mx-2">Reset</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </aside>
+        </main>
 
-        <div class="container custom-section">
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    <h2>Limited<br>Time Over</h2>
-                    <h3>Landing Page</h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias in, consequatur eius quis adipisci aliquid veritatis delectus nostrum corrupti reiciendis.
-                    </p>
-                    <a href="#">Read More</a>
+        <!-- Footer -->
+        <footer id="footer" class="footer shadow bg-white">
+            <!-- Footer Description -->
+            <div class="footer-description d-block d-lg-flex justify-content-around">
+                <!-- Footer Logo -->
+                <div class="footer-logo d-block align-items-center">
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="./img/logo.png" alt="Pinky Shop Logo">
+                        <span>Pinky Shop</span>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, nobis!</p>
+                </div>
+                <!-- Footer Menu -->
+                <div class="footer-menu">
+                    <h2>Menu</h2>
+                    <ul class="p-0">
+                        <li class="footer-menu-item">
+                            <a href="#home">
+                            <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#about">
+                            <span>About</span>
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#gallery">
+                            <span>Gallery</span>
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#faq">
+                            <span>FAQ</span>
+                            </a>
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#contact">
+                            <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Footer Social Media -->
+                <div class="footer-sosmed">
+                    <h2>Sosial Media</h2>
+                    <ul class="p-0">
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="./img/instagram.png" alt="Instagram">
+                                <span>@pinkyshop</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="./img/tiktok.png" alt="Tiktok">
+                                <span>pinkyshop</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="./img/facebook.png" alt="Face Book">
+                                <span>Pinky Shop</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="./img/whatsapp.png" alt="Whats App">
+                                <span>085 1234 5678</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <!-- Footer Copyright -->
+            <div class="footer-copyright">
+                <p class="mb-0">
+                    &copy; Copyright
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Pinky Shop. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+        
 
         <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
 </html>
