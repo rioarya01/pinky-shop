@@ -112,6 +112,11 @@ article, aside {
     font-size: 1.3rem;
   }
 }
+.custom-navbar .custom-navbar-nav .custom-nav-item span:hover,
+.custom-navbar .custom-navbar-nav .custom-nav-item span.active {
+  color: #DA1851;
+  transition-duration: 0.5s;
+}
 .custom-navbar #nav-toggle {
   opacity: 0;
 }
